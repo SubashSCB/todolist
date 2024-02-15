@@ -18,7 +18,7 @@ import React, { Component } from 'react'
     return (
       <div>
         <h1>{this.state.message}</h1>
-        <button onClick={this.changeMessage}>change</button>
+        <button onClick={this.changeMessage.bind(this)}>change</button>
       </div>
     )
   }
