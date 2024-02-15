@@ -4,12 +4,18 @@ import './ToDo.css'
 const ToDo = () => {
   const[inputValue,setInputValue]=useState("");
   const toDoArray=["Buy Groceries","Write a Blog post","Complete Assignments","Go for a walk"]
+  const [message, setMessage] = useState('Click the button to change me!');
+
+  const changeMessage = () => {
+    setMessage('Message changed!');
+  };
+  
   return (
     <div className='whole' >
      <div className='heading'>Do it Now</div> 
      <div className='first'>
       <input className='input' placeholder=" What's the task?" value={inputValue} onChange={(text)=>setInputValue(text.target.value)}/>
-      <div className='button' >Add</div>
+      <div className='button' onClick={changeMessage}>Add</div>
       </div>
       <div className='bottom'>
         {toDoArray.map((x,i)=>(
